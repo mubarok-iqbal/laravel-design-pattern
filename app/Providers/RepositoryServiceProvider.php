@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Repositories\BlogRepositoryInterface;
+use App\Repositories\Eloquent\OtpCodeRepository;
+use App\Repositories\OtpCodeRepositoryInterface;
 use App\Repositories\QueryBuilder\BlogRepository;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -16,6 +18,7 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(BlogRepositoryInterface::class , BlogRepository::class);
+        $this->app->bind(OtpCodeRepositoryInterface::class , OtpCodeRepository::class);
     }
 
     /**
